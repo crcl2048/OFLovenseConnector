@@ -1,12 +1,16 @@
 # OFLovesenseConnector
 Connects a Lovense toy to an OF newsfeed post. This will cause any associated toys to react to comments and likes on a post in real time.
 
-## Installation
+## Installation (executable)
+1. Download the `of_post_lovense_connector.exe` file from here: https://github.com/crcl2048/OFLovenseConnector/releases/download/release/of_post_lovense_connector.exe
+2. Run the executable
+
+## Installation (via Script)
 1. Download and install 'Python 3.9' or later (https://www.python.org/downloads/). You may alredy have this on your machine.
 2. Clone the repo, or download the raw `of_post_lovense_connector.py` python script.
 
 ## Usage
-1. Once Python has been installed, double click on the script and select Python 3.9 or later to launch it.
+1. Once Python has been installed, double click on the script and select Python 3.9 or later to launch it (or run the executable).
 2. In the new command window, follow the instructions the script provides.
     1. Place the Lovesense Remote app in 'Game Mode'
     2. Collect the IP addres and SSL Port # from the app
