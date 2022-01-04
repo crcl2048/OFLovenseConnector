@@ -14,7 +14,7 @@ import urllib
 import urllib3
 import ssl
 
-# Basic command class, supporst default 'action' types, as well as patterns
+# Basic command class, supports default 'action' types, as well as patterns
 # The lovense documentation is, uh, not great: https://www.lovense.com/sextoys/developer/doc
 # YMMV if trying to modify this to do something else, the docs have a couple of examples (patterns, presets, and actions), but it's unclear
 # outside of the examples how the API is formed.
@@ -85,10 +85,10 @@ class LovenseConnection:
 class PilloryWatcher:
 
     __DefaultVibration = LovenseCommand("Vibrate:1", 86400)
-            # Vibrate at low intensity (this is replaced by comments and likes when they come in).
-            # but is otherwise always active to ensure that the sub remains engaged :)
-            # Obivously once the feed being monitored stops being updated (e.g., pillory ended)
-            # you will want to manually stop the toy (closing this program will send a stop command when the connector destructs)
+    # Vibrate at low intensity (this is replaced by comments and likes when they come in).
+    # but is otherwise always active to ensure that the sub remains engaged :)
+    # Obivously once the feed being monitored stops being updated (e.g., pillory ended)
+    # you will want to manually stop the toy (closing this program will send a stop command when the connector destructs)
     
     def __init__(self, postLink, connection):
         
@@ -96,6 +96,7 @@ class PilloryWatcher:
         self.__connection = connection
 
         self.__initial_likes, self.__initial_comments = self.__ReadPilloryLikesAndComments()
+
     def __ReadPilloryLikesAndComments(self):
         response = urllib.request.urlopen(self.__post)
         text = response.read().decode("UTF-8")
@@ -192,7 +193,7 @@ def main():
     while bool(re.match("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$", toyURL)) is False:
         toyURL = input("Invalid IP address. Try again: ")
 
-    toyPort = input("Enter the 'Https Port' here: ")
+    toyPort = input("Enter the 'SSL Port' here: ")
     while toyPort.isnumeric() is False: # isnumeric disallows floating point, so that is good :)
         toyPort = input("Invalid Port. Try again: ")
 
